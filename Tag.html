@@ -1,0 +1,30 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>CroJSDoc - Tag</title><link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"><link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"><link href="google-code-prettify/prettify.css" rel="stylesheet" type="text/css"><link href="style.css" rel="stylesheet" type="text/css"></head><body data-spy="scroll" data-target=".sidebar"><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><div class="container-fluid"><ul class="nav"><li class=""><a href="index.html">Home</a></li><li class=""><a href="generate_doc.html">Modules</a></li><li class="active"><a href="CodeContext.html">Classes</a></li></ul><div class="options"><label class="checkbox"><input id="options-private" type="checkbox"> Private </label></div></div></div></div><div class="container-fluid content"><div class="row-fluid"><div class="span3 visible-desktop"><div data-spy="affix" class="span3 sidebar"><ul class="nav nav-list cormo-sidenav"><li><a href="CodeContext.html">CodeContext</a></li><li><a href="Comment.html">Comment</a></li><li class="active"><a href="#Tag">Tag</a></li><li class="cormo-class-property "><a href="#Tag__description">description<span class="label label-property">property</span></a></li><li class="cormo-class-property "><a href="#Tag__name">name<span class="label label-property">property</span></a></li><li class="cormo-class-property "><a href="#Tag__string">string<span class="label label-property">property</span></a></li><li class="cormo-class-property "><a href="#Tag__type">type<span class="label label-property">property</span></a></li><li class="cormo-class-property "><a href="#Tag__types">types<span class="label label-property">property</span></a></li><li class="nav-header">example</li><li><a href="example.ExampleCoffee.html">ExampleCoffee</a></li><li><a href="example.ExampleJS.html">ExampleJS</a></li></ul></div></div><div class="span9"><div class="page-header"><section id="Tag"><h1 class="class_title">Tag</h1><div><p>Represents a tag in a comment</p>
+</div><div><p>Data differs by types.
+
+</p>
+<ul>
+<li>types, name, description for @param</li>
+<li>types, description for @return</li>
+<li>local or title &amp; url for @see</li>
+<li>visibility for @api</li>
+<li>types for @type</li>
+<li>parent for @memberOf</li>
+<li>otherClass for @augments</li>
+<li>otherMemberName, thisMemberName for @borrows</li>
+<li>string for other types</li>
+</ul>
+</div><button class="showcode btn btn-info">Show code</button><span> (defined in /lib/comment.coffee:15)</span><pre class="sourcecode prettyprint .linenums:15">class Tag</pre></section></div><section id="Tag__description" class=""><h2 class="class_method">Tag::description : <a href='https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String'>String</a><span class="label label-property">property</span></h2><div></div><div></div><hr class="item-seperator"></section><section id="Tag__name" class=""><h2 class="class_method">Tag::name : <a href='https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String'>String</a><span class="label label-property">property</span></h2><div></div><div></div><hr class="item-seperator"></section><section id="Tag__string" class=""><h2 class="class_method">Tag::string : <a href='https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String'>String</a><span class="label label-property">property</span></h2><div><p>The remain string if this tag is unknown</p>
+</div><div></div><hr class="item-seperator"></section><section id="Tag__type" class=""><h2 class="class_method">Tag::type : <a href='https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String'>String</a><span class="label label-property">property</span></h2><div><p>The type of this tag</p>
+</div><div></div><hr class="item-seperator"></section><section id="Tag__types" class=""><h2 class="class_method">Tag::types : <a href='https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array'>Array</a>&lt;<a href='https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String'>String</a>&gt;<span class="label label-property">property</span></h2><div></div><div></div><hr class="item-seperator"></section></div></div></div><script src="http://code.jquery.com/jquery-1.8.2.min.js"></script><script src="bootstrap/js/bootstrap.min.js"></script><script src="google-code-prettify/prettify.js"></script><script>$(function() {
+  // make result of marked for pretty print
+  $('pre code[class^="lang-"]').addClass('.prettyprint');
+  window.prettyPrint && prettyPrint()
+});
+$('body').on('click', '.showcode', function () {
+  $(this).parent().find('pre.sourcecode').toggle();
+  $('body').scrollspy('refresh');
+});
+$('#options-private').on('click', function () {
+  $('.private').toggle();
+  $('body').scrollspy('refresh');
+});</script></body></html>
