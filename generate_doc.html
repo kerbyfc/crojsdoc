@@ -1,10 +1,10 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>CroJSDoc - generate_doc</title><link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"><link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"><link href="google-code-prettify/prettify.css" rel="stylesheet" type="text/css"><link href="style.css" rel="stylesheet" type="text/css"></head><body data-spy="scroll" data-target=".sidebar"><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><div class="container-fluid"><ul class="nav"><li class=""><a href="index.html">Home</a></li><li class="active"><a href="generate_doc.html">Modules</a></li><li class=""><a href="CodeContext.html">Classes</a></li></ul><div class="options"><label class="checkbox"><input id="options-private" type="checkbox"> Private </label></div></div></div></div><div class="container-fluid content"><div class="row-fluid"><div class="span3 visible-desktop"><div data-spy="affix" class="span3 sidebar"><ul class="nav nav-list cormo-sidenav"><li class="active"><a href="#generate_doc">generate_doc</a></li><li class="cormo-class-property private"><a href="#generate_doc_applyMarkdown">applyMarkdown<span class="label label-private">private</span></a></li><li class="cormo-class-property private"><a href="#generate_doc_classifyComments">classifyComments<span class="label label-private">private</span></a></li><li class="cormo-class-property private"><a href="#generate_doc_convertLink">convertLink<span class="label label-private">private</span></a></li><li class="cormo-class-property private"><a href="#generate_doc_findParam">findParam<span class="label label-private">private</span></a></li><li class="cormo-class-property "><a href="#generate_doc_generate">generate</a></li><li class="cormo-class-property private"><a href="#generate_doc_getComments">getComments<span class="label label-private">private</span></a></li><li class="cormo-class-property private"><a href="#generate_doc_makeNested">makeNested<span class="label label-private">private</span></a></li><li class="cormo-class-property private"><a href="#generate_doc_makeTypeLink">makeTypeLink<span class="label label-private">private</span></a></li><li class="cormo-class-property private"><a href="#generate_doc_processComments">processComments<span class="label label-private">private</span></a></li><li class="cormo-class-property private"><a href="#generate_doc_processParamFlags">processParamFlags<span class="label label-private">private</span></a></li><li class="cormo-class-property private"><a href="#generate_doc_result">result<span class="label label-private">private</span><span class="label label-property">property</span></a></li><li class="cormo-class-property private"><a href="#generate_doc_types">types<span class="label label-private">private</span><span class="label label-property">property</span></a></li></ul></div></div><div class="span9"><div class="page-header"><section id="generate_doc"><h1 class="class_title">generate_doc</h1><div>(defined in /lib/generate_doc.coffee)</div><div></div><div></div></section></div><section id="generate_doc_applyMarkdown" class="private"><h2 class="class_method">applyMarkdown()<span class="label label-private">private</span></h2><div><p>Apply markdown</p>
-</div><div></div><button class="showcode btn btn-info">Show code</button><span> (defined in /lib/generate_doc.coffee:185)</span><pre class="sourcecode prettyprint .linenums:185">applyMarkdown = (str) ->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>CroJSDoc - generate_doc</title><link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"><link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"><link href="google-code-prettify/prettify.css" rel="stylesheet" type="text/css"><link href="style.css" rel="stylesheet" type="text/css"></head><body data-spy="scroll" data-target=".sidebar"><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><div class="container-fluid"><ul class="nav"><li class=""><a href="index.html">Home</a></li><li class="dropdown "><a data-toggle="dropdown" href="#" class="dropdown-toggle">Guides <span class="caret"></span></a><ul class="dropdown-menu"><li><a href="AllCommandsGuide.html">AllCommands</a></li><li><a href="SpecifyingTypesGuide.html">SpecifyingTypes</a></li></ul></li><li class="active"><a href="generate_doc.html">Modules - generate_doc</a></li><li class=""><a href="CodeContext.html">Classes</a></li></ul><div class="options"><label class="checkbox"><input id="options-private" type="checkbox"> Private </label></div></div></div></div><div class="container-fluid content"><div class="row-fluid"><div class="span3 visible-desktop"><div data-spy="affix" class="span3 sidebar"><ul class="nav nav-list cormo-sidenav"><li class="active"><a href="#generate_doc">generate_doc</a></li><li class="cormo-class-property private"><a href="#generate_doc_applyMarkdown">applyMarkdown<span class="label label-private">private</span></a></li><li class="cormo-class-property private"><a href="#generate_doc_classifyComments">classifyComments<span class="label label-private">private</span></a></li><li class="cormo-class-property private"><a href="#generate_doc_convertLink">convertLink<span class="label label-private">private</span></a></li><li class="cormo-class-property private"><a href="#generate_doc_findParam">findParam<span class="label label-private">private</span></a></li><li class="cormo-class-property "><a href="#generate_doc_generate">generate</a></li><li class="cormo-class-property private"><a href="#generate_doc_getComments">getComments<span class="label label-private">private</span></a></li><li class="cormo-class-property private"><a href="#generate_doc_makeNested">makeNested<span class="label label-private">private</span></a></li><li class="cormo-class-property private"><a href="#generate_doc_makeTypeLink">makeTypeLink<span class="label label-private">private</span></a></li><li class="cormo-class-property private"><a href="#generate_doc_processComments">processComments<span class="label label-private">private</span></a></li><li class="cormo-class-property private"><a href="#generate_doc_processParamFlags">processParamFlags<span class="label label-private">private</span></a></li><li class="cormo-class-property private"><a href="#generate_doc_result">result<span class="label label-private">private</span><span class="label label-property">property</span></a></li><li class="cormo-class-property private"><a href="#generate_doc_types">types<span class="label label-private">private</span><span class="label label-property">property</span></a></li></ul></div></div><div class="span9"><div class="page-header"><section id="generate_doc"><h1 class="class_title">generate_doc</h1><div>(defined in /lib/generate_doc.coffee)</div><div></div><div></div></section></div><section id="generate_doc_applyMarkdown" class="private"><h2 class="class_method">applyMarkdown()<span class="label label-private">private</span></h2><div><p>Apply markdown</p>
+</div><div></div><button class="showcode btn btn-info">Show code</button><span> (defined in /lib/generate_doc.coffee:192)</span><pre class="sourcecode prettyprint .linenums:192">applyMarkdown = (str) ->
   # we cannot use '###' for header level 3 or above in CoffeeScript, instead web use '##\#', ''##\##', ...
   # recover this for markdown
   str = str.replace /#\\#/g, '##'
   return markdown str</pre><hr class="item-seperator"></section><section id="generate_doc_classifyComments" class="private"><h2 class="class_method">classifyComments()<span class="label label-private">private</span></h2><div><p>Classifies type and collect id</p>
-</div><div></div><button class="showcode btn btn-info">Show code</button><span> (defined in /lib/generate_doc.coffee:195)</span><pre class="sourcecode prettyprint .linenums:195">classifyComments = (file, comments) ->
+</div><div></div><button class="showcode btn btn-info">Show code</button><span> (defined in /lib/generate_doc.coffee:202)</span><pre class="sourcecode prettyprint .linenums:202">classifyComments = (file, comments) ->
   current_class = undefined
 
   comments.forEach (comment) ->
@@ -110,7 +110,7 @@
         comment.filename = 'pages'
       when 'restapi'
         comment.filename = 'restapis'</pre><hr class="item-seperator"></section><section id="generate_doc_convertLink" class="private"><h2 class="class_method">convertLink()<span class="label label-private">private</span></h2><div><p>Converts link markups to HTML links in the description</p>
-</div><div></div><button class="showcode btn btn-info">Show code</button><span> (defined in /lib/generate_doc.coffee:171)</span><pre class="sourcecode prettyprint .linenums:171">convertLink = (str) ->
+</div><div></div><button class="showcode btn btn-info">Show code</button><span> (defined in /lib/generate_doc.coffee:178)</span><pre class="sourcecode prettyprint .linenums:178">convertLink = (str) ->
   str = str.replace /\[\[#([^\[\]]+)\]\]/g, (_, $1) ->
     if result.ids[$1] and result.ids[$1] isnt 'DUPLICATED ENTRY'
       filename = result.ids[$1].filename + '.html'
@@ -119,7 +119,7 @@
     else
       return makeMissingLink $1
   return str</pre><hr class="item-seperator"></section><section id="generate_doc_findParam" class="private"><h2 class="class_method">findParam(params, name)<span class="label label-private">private</span></h2><div><p>Finds a parameter in the list</p>
-</div><div></div><h3>Parameters:</h3><ul><li> <span>{<a href='https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array'>Array</a>&lt;<a href='https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object'>Object</a>&gt;} </span><code>params</code><span> </span></li><li> <span>{<a href='https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String'>String</a>} </span><code>name</code><span> </span></li></ul><h3>Returns:</h3><ul><li><span> {<a href='https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object'>Object</a>} </span><span></span><ul></ul></li></ul><button class="showcode btn btn-info">Show code</button><span> (defined in /lib/generate_doc.coffee:142)</span><pre class="sourcecode prettyprint .linenums:142">findParam = (params, name) ->
+</div><div></div><h3>Parameters:</h3><ul><li> <span>{<a href='https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array'>Array</a>&lt;<a href='https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object'>Object</a>&gt;} </span><code>params</code><span> </span></li><li> <span>{<a href='https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String'>String</a>} </span><code>name</code><span> </span></li></ul><h3>Returns:</h3><ul><li><span> {<a href='https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object'>Object</a>} </span><span></span><ul></ul></li></ul><button class="showcode btn btn-info">Show code</button><span> (defined in /lib/generate_doc.coffee:149)</span><pre class="sourcecode prettyprint .linenums:149">findParam = (params, name) ->
   for param in params
     if param.name is name
       return param
@@ -127,7 +127,7 @@
       found = findParam param.params, name
       return found if found
   return</pre><hr class="item-seperator"></section><section id="generate_doc_generate" class=""><h2 class="class_method">generate()</h2><div><p>Generates documents</p>
-</div><div></div><button class="showcode btn btn-info">Show code</button><span> (defined in /lib/generate_doc.coffee:499)</span><pre class="sourcecode prettyprint .linenums:499">generate = (paths, genopts) ->
+</div><div></div><button class="showcode btn btn-info">Show code</button><span> (defined in /lib/generate_doc.coffee:523)</span><pre class="sourcecode prettyprint .linenums:523">generate = (paths, genopts) ->
   result.project_title = genopts?.title or 'croquis-jsdoc'
 
   if genopts?['external-types']
@@ -179,6 +179,7 @@
 
   copyResources __dirname, genopts.doc_dir
   renderReadme result, genopts
+  renderGuides result, genopts
   renderPages result, genopts
   renderRESTApis result, genopts
   renderClasses result, genopts
@@ -210,11 +211,17 @@
         { type: 'namespace', string: namespace }
       ]
     } ]
+  else if /Guide\.md$/.test file
+    file = file.substr 0, file.length-3
+    result.guides.push
+      name: file.substr 0, file.length-5
+      filename: file
+      content: content
 
   # filter out empty comments
   return comments?.filter (comment) ->
     return comment.description.full or comment.description.summary or comment.description.body or comment.tags?.length > 0</pre><hr class="item-seperator"></section><section id="generate_doc_makeNested" class="private"><h2 class="class_method">makeNested()<span class="label label-private">private</span></h2><div><p>Makes parameters(or returnprops) nested</p>
-</div><div></div><button class="showcode btn btn-info">Show code</button><span> (defined in /lib/generate_doc.coffee:155)</span><pre class="sourcecode prettyprint .linenums:155">makeNested = (comment, targetName) ->
+</div><div></div><button class="showcode btn btn-info">Show code</button><span> (defined in /lib/generate_doc.coffee:162)</span><pre class="sourcecode prettyprint .linenums:162">makeNested = (comment, targetName) ->
   i = comment[targetName].length
   while i-->0
     param = comment[targetName][i]
@@ -245,7 +252,7 @@
     return "#{makeTypeLink res[1]}&lt;#{makeTypeLink res[2]}&gt;"
   else
     return getlink type</pre><hr class="item-seperator"></section><section id="generate_doc_processComments" class="private"><h2 class="class_method">processComments()<span class="label label-private">private</span></h2><div><p>Structuralizes comments</p>
-</div><div></div><button class="showcode btn btn-info">Show code</button><span> (defined in /lib/generate_doc.coffee:306)</span><pre class="sourcecode prettyprint .linenums:306">processComments = (comments) ->
+</div><div></div><button class="showcode btn btn-info">Show code</button><span> (defined in /lib/generate_doc.coffee:313)</span><pre class="sourcecode prettyprint .linenums:313">processComments = (comments) ->
   comments.forEach (comment) ->
     desc = comment.description
     if desc
@@ -329,7 +336,7 @@
 <li>&#39;+&#39; name : addable</li>
 <li>&#39;-&#39; name : excludable</li>
 </ul>
-</div><h3>Parameters:</h3><ul><li> <span>{<a href='https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object'>Object</a>} </span><code>tag</code><span> </span></li></ul><h3>Returns:</h3><ul><li><span> {<a href='https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object'>Object</a>} </span><span>given tag</span><ul></ul></li></ul><button class="showcode btn btn-info">Show code</button><span> (defined in /lib/generate_doc.coffee:122)</span><pre class="sourcecode prettyprint .linenums:122">processParamFlags = (tag) ->
+</div><h3>Parameters:</h3><ul><li> <span>{<a href='https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object'>Object</a>} </span><code>tag</code><span> </span></li></ul><h3>Returns:</h3><ul><li><span> {<a href='https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object'>Object</a>} </span><span>given tag</span><ul></ul></li></ul><button class="showcode btn btn-info">Show code</button><span> (defined in /lib/generate_doc.coffee:129)</span><pre class="sourcecode prettyprint .linenums:129">processParamFlags = (tag) ->
   # is optional parameter?
   if /\[([^\[\]]+)\]/.exec tag.name
     tag.name = RegExp.$1
@@ -341,10 +348,11 @@
     tag.name = tag.name.substr(1)
     tag.excludable = true
   return tag</pre><hr class="item-seperator"></section><section id="generate_doc_result" class="private"><h2 class="class_method">result<span class="label label-private">private</span><span class="label label-property">property</span></h2><div><p>Parsed result</p>
-</div><div></div><button class="showcode btn btn-info">Show code</button><span> (defined in /lib/generate_doc.coffee:104)</span><pre class="sourcecode prettyprint .linenums:104">result =
+</div><div></div><button class="showcode btn btn-info">Show code</button><span> (defined in /lib/generate_doc.coffee:110)</span><pre class="sourcecode prettyprint .linenums:110">result =
   project_title: ''
   ids: {}
   classes: {}
+  guides: []
   pages: {}
   restapis: {}</pre><hr class="item-seperator"></section><section id="generate_doc_types" class="private"><h2 class="class_method">types<span class="label label-private">private</span><span class="label label-property">property</span></h2><div><p>Links for pre-known types</p>
 </div><div></div><button class="showcode btn btn-info">Show code</button><span> (defined in /lib/generate_doc.coffee:16)</span><pre class="sourcecode prettyprint .linenums:16">types =
