@@ -7,6 +7,7 @@ jade = require 'jade'
 walkdir = require 'walkdir'
 markdown = require 'marked'
 dirname = require('path').dirname
+resolve = require('path').resolve
 
 ##
 # Links for pre-known types
@@ -265,9 +266,9 @@ classifyComments = (file, comments) -&gt;
     comment.namespace = ''
 
     if comment.ctx.type is 'property' or comment.ctx.type is 'method'
-      if comment.ctx.hasOwnProperty 'constructor'
+      if comment.ctx.cons?
         comment.static = false
-        comment.ctx.class_name = comment.ctx.constructor
+        comment.ctx.class_name = comment.ctx.cons
       else if comment.ctx.receiver?
         comment.static = true
         comment.ctx.class_name = comment.ctx.receiver
@@ -490,6 +491,7 @@ renderReadme = (result, genopts) -&gt;
       makeTypeLink: makeTypeLink
       makeSeeLink: makeSeeLink
       convertLink: convertLink
+      genopts: genopts
     jade.renderFile &quot;#{genopts.template_dir}/extra.jade&quot;, options, (error, result) -&gt;
       return console.error error.stack if error
       output_file = &quot;#{genopts.doc_dir}/index.html&quot;
@@ -515,6 +517,7 @@ renderGuides = (result, genopts) -&gt;
       makeTypeLink: makeTypeLink
       makeSeeLink: makeSeeLink
       convertLink: convertLink
+      genopts: genopts
     jade.renderFile &quot;#{genopts.template_dir}/extra.jade&quot;, options, (error, result) -&gt;
       return console.error error.stack if error
       output_file = &quot;#{genopts.doc_dir}/#{guide.filename}.html&quot;
@@ -532,6 +535,7 @@ renderPages = (result, genopts) -&gt;
       makeTypeLink: makeTypeLink
       makeSeeLink: makeSeeLink
       convertLink: convertLink
+      genopts: genopts
     jade.renderFile &quot;#{genopts.template_dir}/pages.jade&quot;, options, (error, result) -&gt;
       return console.error error.stack if error
       output_file = &quot;#{genopts.doc_dir}/pages.html&quot;
@@ -549,6 +553,7 @@ renderRESTApis = (result, genopts) -&gt;
       makeTypeLink: makeTypeLink
       makeSeeLink: makeSeeLink
       convertLink: convertLink
+      genopts: genopts
     jade.renderFile &quot;#{genopts.template_dir}/restapis.jade&quot;, options, (error, result) -&gt;
       return console.error error.stack if error
       output_file = &quot;#{genopts.doc_dir}/restapis.html&quot;
@@ -573,6 +578,7 @@ renderClasses = (result, genopts) -&gt;
       makeTypeLink: makeTypeLink
       makeSeeLink: makeSeeLink
       convertLink: convertLink
+      genopts: genopts
     jade.renderFile &quot;#{genopts.template_dir}/class.jade&quot;, options, (error, result) -&gt;
       return console.error error.stack if error
       output_file = &quot;#{genopts.doc_dir}/#{klass.filename}.html&quot;
@@ -597,6 +603,7 @@ renderModules = (result, genopts) -&gt;
       makeTypeLink: makeTypeLink
       makeSeeLink: makeSeeLink
       convertLink: convertLink
+      genopts: genopts
     jade.renderFile &quot;#{genopts.template_dir}/module.jade&quot;, options, (error, result) -&gt;
       return console.error error.stack if error
       output_file = &quot;#{genopts.doc_dir}/#{module.filename}.html&quot;
@@ -619,6 +626,7 @@ renderFeatures = (result, genopts) -&gt;
       makeTypeLink: makeTypeLink
       makeSeeLink: makeSeeLink
       convertLink: convertLink
+      genopts: genopts
     jade.renderFile &quot;#{genopts.template_dir}/feature.jade&quot;, options, (error, result) -&gt;
       return console.error error.stack if error
       output_file = &quot;#{genopts.doc_dir}/#{feature.filename}.html&quot;
@@ -641,6 +649,7 @@ renderFiles = (result, genopts) -&gt;
       makeTypeLink: makeTypeLink
       makeSeeLink: makeSeeLink
       convertLink: convertLink
+      genopts: genopts
     jade.renderFile &quot;#{genopts.template_dir}/file.jade&quot;, options, (error, result) -&gt;
       return console.error error.stack if error
       output_file = &quot;#{genopts.doc_dir}/#{file.filename}.html&quot;
@@ -654,17 +663,19 @@ renderFiles = (result, genopts) -&gt;
 generate = (paths, genopts) -&gt;
   result.project_title = genopts?.title or 'croquis-jsdoc'
 
-  if genopts?['external-types']
-    try
-      content = fs.readFileSync(genopts['external-types'], 'utf-8').trim()
+  if external_types = genopts?['external-types']
+    if typeof external_types is 'string'
       try
-        ext_types = JSON.parse content
-        for type, url of ext_types
-          types[type] = url
+        content = fs.readFileSync(external_types, 'utf-8').trim()
+        try
+          external_types = JSON.parse content
+        catch e
+          console.log &quot;external-types: Invalid JSON file&quot;
       catch e
-        console.log &quot;external-types: Invalid JSON file&quot;
-    catch e
-      console.log &quot;external-types: Cannot open #{genopts['external-types']}&quot;
+        console.log &quot;external-types: Cannot open #{genopts['external-types']}&quot;
+    if typeof external_types is 'object'
+      for type, url of external_types
+        types[type] = url
 
   genopts.project_dir = process.cwd()
   output_dir = genopts?.output or 'doc'
@@ -678,7 +689,7 @@ generate = (paths, genopts) -&gt;
 
   all_comments = []
   paths.forEach (path) -&gt;
-    path = &quot;#{genopts.project_dir}/#{path}&quot;
+    path = resolve &quot;#{genopts.project_dir}/#{path}&quot;
     if fs.statSync(path).isDirectory()
       list = walkdir.sync path
     else
@@ -725,4 +736,4 @@ $('body').on('click', '.showcode', function () {
 $('#options-private').on('click', function () {
   $('.private').toggle();
   $('body').scrollspy('refresh');
-});</script></body></html>
+});</script><a href="https://github.com/croquiscom/crojsdoc"><img src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub" class="github-ribbon"></a></body></html>

@@ -216,6 +216,7 @@ exports.parseCodeContextCoffee = function(str, parent) {
     return {
         type: 'method'
       , constructor: RegExp.$1
+      , cons: RegExp.$1
       , name: RegExp.$2
       , string: RegExp.$1 + '::' + RegExp.$2 + '()'
     };
@@ -224,6 +225,7 @@ exports.parseCodeContextCoffee = function(str, parent) {
     return {
         type: 'property'
       , constructor: RegExp.$1
+      , cons: RegExp.$1
       , name: RegExp.$2
       , value: RegExp.$3
       , string: RegExp.$1 + '::' + RegExp.$2
@@ -272,6 +274,7 @@ exports.parseCodeContextCoffee = function(str, parent) {
     return {
         type: 'method'
       , constructor: class_name
+      , cons: class_name
       , name: RegExp.$1
       , string: class_name + '::' + RegExp.$1 + '()'
     };
@@ -280,6 +283,7 @@ exports.parseCodeContextCoffee = function(str, parent) {
     return {
         type: 'property'
       , constructor: class_name
+      , cons: class_name
       , name: RegExp.$1
       , value: RegExp.$2
       , string: class_name + '::' + RegExp.$1
@@ -318,4 +322,4 @@ $('body').on('click', '.showcode', function () {
 $('#options-private').on('click', function () {
   $('.private').toggle();
   $('body').scrollspy('refresh');
-});</script></body></html>
+});</script><a href="https://github.com/croquiscom/crojsdoc"><img src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub" class="github-ribbon"></a></body></html>

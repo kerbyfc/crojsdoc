@@ -10,13 +10,22 @@ And Markdown comments are processed with <a href="https://github.com/chjj/marked
 
 </p>
 <h1>Command</h1>
-<pre><code class="lang-bash">$ crojsdoc [-q] [-o DIRECTORY] [-t TITLE] SOURCES...</code></pre>
+<pre><code class="lang-bash">$ crojsdoc [-o DIRECTORY] [-t TITLE] [-q] SOURCES...</code></pre>
 <ul>
-<li>-q : quiet output</li>
-<li>-o DIRECTORY : set output directory</li>
+<li>-o DIRECTORY : set output directory, default is doc</li>
 <li>-t TITLE : set documents title</li>
+<li>-q : quiet output</li>
 <li>SOURCES : source files or directories</li>
 </ul>
+<p>Or, you can specify options in crojsdoc.yaml like this:
+
+</p>
+<pre><code>output: doc
+title: Title
+quite: true
+sources:
+  - lib
+  - guides</code></pre>
 <h1>Comment blocks</h1>
 <p>This accepts JavaDoc style&#39;s comments basically.
 
@@ -40,6 +49,33 @@ add = (a, b) -&gt;
 # Subtracts two numbers
 subtract = (a, b) -&gt;
     a-b</code></pre>
+<h1>License</h1>
+<p>The MIT License (MIT)
+
+</p>
+<p>Copyright (c) 2012-2013 Sangmin Yoon &lt;sangmin.yoon@croquis.com&gt;
+
+</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+</p>
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+</p>
+<p>THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+</p>
 </div></div></div><script src="http://code.jquery.com/jquery-1.8.2.min.js"></script><script src="./bootstrap/js/bootstrap.min.js"></script><script src="./google-code-prettify/prettify.js"></script><script>$(function() {
   // make result of marked for pretty print
   $('pre code[class^="lang-"]').addClass('.prettyprint');
@@ -54,4 +90,4 @@ $('#options-private').on('click', function () {
   $('body').scrollspy('refresh');
 });</script><script src="http://code.jquery.com/ui/1.9.0/jquery-ui.min.js"></script><script src="./tocify/jquery.tocify.min.js"></script><script>$(function() {
   $('#toc').tocify();
-});</script></body></html>
+});</script><a href="https://github.com/croquiscom/crojsdoc"><img src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub" class="github-ribbon"></a></body></html>
