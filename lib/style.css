@@ -6,10 +6,12 @@
 	bottom: 0;
 	background: white;
 }
-
+.sidebar.affix {
+  top: 40px;
+}
 .cormo-sidenav {
-	margin-top: 60px;
 	margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .cormo-sidenav > li > a {
@@ -23,8 +25,14 @@
 	font-size: small;
 }
 
+ul.nav li:last-child > ul {
+  overflow-y: scroll;
+  max-height: 700px;
+}
+
 .sourcecode {
 	display: none;
+  padding-top: 15px !important;
 }
 
 .private {
@@ -40,6 +48,10 @@
 .cormo-class-property .label {
 	margin-left: 5px;
 	font-size: 0.7em;
+}
+
+.label {
+  margin: 4px;
 }
 
 .label-optional {
@@ -80,11 +92,19 @@
 
 .missing-link {
 	color: red;
-	background-color: gray;
 }
 
 section {
 	padding-top: 30px;
+}
+
+section > ul > li {
+  list-style: none;
+  line-height: 25px !important;
+}
+
+section:first-child {
+  margin-top: 30px;
 }
 
 .extends {
@@ -122,3 +142,24 @@ li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9 {
 	right: 0;
 	border: 0;
 }
+
+.btn {
+  border-radius: 3px;
+  border: none;
+  background-image: none;
+  text-shadow: none;
+  box-shadow: none;
+  padding: 3px 9px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+pre.prettyprint, .prettyprint pre {
+  border: none;
+  background: none;
+}
+
+.prettyprint pre {
+  padding: 0;
+}
+
