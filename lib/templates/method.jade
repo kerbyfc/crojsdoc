@@ -27,6 +27,8 @@ h2.class_method
     span.label.label-override override
   if method.ctx.type==='property'
     span.label.label-property property
+  div.prettyprint
+    != method.default
 if item!==method
   div!= 'Overrides ' + makeTypeLink(rel_path, item.override_link)
   br
@@ -62,7 +64,7 @@ if method.examples.length
   ul
     each example, i in method.examples
       li
-        pre.prettyprint!= example.string
+        pre.prettyprint!= example
 if method.return
   h3 Returns:
   ul

@@ -241,6 +241,12 @@ applyMarkdown = (str) ->
   return markdown str
 
 ##
+# Return compiled markdown with coffeescript code
+coffeecode = (text) ->
+  applyMarkdown "```coffescript\n#{text}\n```"
+
+
+##
 # Classifies type and collect id
 # @private
 # @memberOf generate_doc
@@ -318,7 +324,7 @@ classifyComments = (file, comments) ->
         when 'async'
           comment.async = true
         when 'param', 'return', 'returnprop', 'throws', 'resterror', 'see'
-          , 'extends', 'todo', 'type', 'api', 'uses', 'override'
+          , 'extends', 'todo', 'type', 'api', 'uses', 'override', 'default', 'example'
         else
           console.log "Unknown tag : #{tag.type} in #{file}"
 
@@ -357,6 +363,8 @@ classifyComments = (file, comments) ->
       when 'property', 'method'
         comment.ctx.class_name = comment.namespace + comment.ctx.class_name
         comment.filename = 'classes/' + comment.ctx.class_name.replace(/\//g, '.')
+        if comment.ctx.type is 'property' and !comment.default
+          comment.default = coffeecode comment.code.match(/(\s*[\=\:]\s*?)(.*)/)[2]
       when 'page'
         comment.filename = 'pages'
       when 'restapi'
@@ -387,6 +395,8 @@ processComments = (comments) ->
             tag.types[i] = type
           tag.description = tag.description
           comment.return = tag
+        when 'default'
+          comment.default = coffeecode tag.string
         when 'returnprop'
           tag = dox.parseTag '@param ' + tag.string
           tag = processParamFlags tag
@@ -418,7 +428,7 @@ processComments = (comments) ->
             tag.types[i] = type
           comment.types = tag.types
         when 'example'
-          comment.examples.push tag
+          comment.examples.push tag.string
         when 'override'
           if result.ids[tag.string] and result.ids[tag.string] isnt 'DUPLICATED ENTRY'
             comment.override = result.ids[tag.string]
